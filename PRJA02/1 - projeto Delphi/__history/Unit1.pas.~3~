@@ -1,0 +1,63 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Data.DB, Datasnap.DBClient,
+  Vcl.Grids, Vcl.DBGrids, Vcl.DBCtrls, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    ds1: TClientDataSet;
+    ds2: TDataSource;
+    pnl2: TPanel;
+    grp1: TGroupBox;
+    lbl1: TLabel;
+    edtValorDoFiltro: TEdit;
+    btnAdicionarFiltro: TButton;
+    btnRemoverFiltro: TButton;
+    grp2: TGroupBox;
+    dbnvgr1: TDBNavigator;
+    dbgrd1: TDBGrid;
+    btn1: TButton;
+    btn2: TButton;
+    btn3: TButton;
+    grp3: TGroupBox;
+    grp4: TGroupBox;
+    grp5: TGroupBox;
+    pnl1: TPanel;
+    grp6: TGroupBox;
+    lbl2: TLabel;
+    edt1: TEdit;
+    btn4: TButton;
+    btn5: TButton;
+    grp7: TGroupBox;
+    dbnvgr2: TDBNavigator;
+    dbgrd2: TDBGrid;
+    btn6: TButton;
+    btn7: TButton;
+    btn8: TButton;
+    grp8: TGroupBox;
+    grpLocate: TGroupBox;
+    grp10: TGroupBox;
+    edt2: TEdit;
+    edt3: TEdit;
+    edt4: TEdit;
+    btn9: TButton;
+    btn10: TButton;
+    btn11: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+end.
