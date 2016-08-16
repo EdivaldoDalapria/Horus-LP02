@@ -119,7 +119,7 @@ object Form1: TForm1
       Width = 777
       Height = 48
       Align = alTop
-      Caption = 'grp1'
+      Caption = 'Filtro'
       TabOrder = 0
       object lbl2: TLabel
         Left = 16
@@ -181,31 +181,31 @@ object Form1: TForm1
       end
     end
     object btnLimparDados: TButton
-      Left = 14
-      Top = 408
-      Width = 90
+      Left = 17
+      Top = 409
+      Width = 107
       Height = 25
       Caption = 'Limpar Dados'
       TabOrder = 2
     end
     object btnIndexarPorID: TButton
-      Left = 14
-      Top = 439
-      Width = 90
+      Left = 17
+      Top = 440
+      Width = 107
       Height = 25
       Caption = 'Indexar Por ID'
       TabOrder = 3
     end
     object btnIndexarPorNome: TButton
-      Left = 14
-      Top = 470
-      Width = 90
+      Left = 17
+      Top = 471
+      Width = 107
       Height = 25
       Caption = 'Indexar Por Nome'
       TabOrder = 4
     end
     object grp8: TGroupBox
-      Left = 122
+      Left = 138
       Top = 402
       Width = 136
       Height = 94
@@ -235,7 +235,7 @@ object Form1: TForm1
       end
     end
     object grpLocate: TGroupBox
-      Left = 274
+      Left = 290
       Top = 402
       Width = 136
       Height = 94
@@ -265,7 +265,7 @@ object Form1: TForm1
       end
     end
     object grp10: TGroupBox
-      Left = 424
+      Left = 440
       Top = 402
       Width = 136
       Height = 94
