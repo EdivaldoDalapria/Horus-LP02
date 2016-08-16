@@ -1,0 +1,130 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Datasnap.DBClient,
+  Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    ClientDataSet: TClientDataSet;
+    DataSource: TDataSource;
+    intgrfldds1Codigo: TIntegerField;
+    ClientDataSetDescricao: TStringField;
+    ClientDataSetUnidade: TStringField;
+    ClientDataSetFornecedor: TStringField;
+    ClientDataSetQuantidade: TFloatField;
+    ClientDataSetUnitario: TCurrencyField;
+    ClientDataSetTotal: TCurrencyField;
+    ClientDataSetEstoqueQtd: TAggregateField;
+    ClientDataSetEstoqueVlr: TAggregateField;
+    pnl1: TPanel;
+    tdb1: TDBNavigator;
+    pnl2: TPanel;
+    pnl3: TPanel;
+    tdb2: TDBGrid;
+    grp1: TGroupBox;
+    lbl1: TLabel;
+    lbl2: TLabel;
+    dbedtEstoqueQtd: TDBEdit;
+    dbedtEstoqueVlr: TDBEdit;
+    dbedtCodigo: TDBEdit;
+    dbedtData: TDBEdit;
+    dbedtDescricao: TDBEdit;
+    dbedtFornecedor: TDBEdit;
+    dbedtQuantidade: TDBEdit;
+    dbedtUnitario: TDBEdit;
+    dbedtUnidade: TDBEdit;
+    dbedtTotal: TDBEdit;
+    lbl3: TLabel;
+    lbl4: TLabel;
+    lbl5: TLabel;
+    lbl6: TLabel;
+    lbl7: TLabel;
+    lbl8: TLabel;
+    lbl9: TLabel;
+    lbl10: TLabel;
+    cbbCampo: TComboBox;
+    cbbAcao: TComboBox;
+    edtValor: TEdit;
+    btnExecutar: TButton;
+    lbl11: TLabel;
+    lbl12: TLabel;
+    lbl13: TLabel;
+    lbl14: TLabel;
+    lbl15: TLabel;
+    ClientDataSetData: TDateField;
+    procedure ClientDataSetCalcFields(DataSet: TDataSet);
+    procedure FormCreate(Sender: TObject);
+    procedure ClientDataSetBeforePost(DataSet: TDataSet);
+    procedure cbbAcaoChange(Sender: TObject);
+    procedure btnExecutarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnExecutarClick(Sender: TObject);
+begin
+   //write cod here... exercício 13
+
+end;
+
+procedure TForm1.cbbAcaoChange(Sender: TObject);
+begin
+    if (cbbAcao.ItemIndex = 0) or (cbbAcao.ItemIndex = 3) or (cbbAcao.ItemIndex = 6)  then
+    begin
+      //(cbbAcao.OnChange := edtValor = False);
+    end;
+
+end;
+
+procedure TForm1.ClientDataSetBeforePost(DataSet: TDataSet);
+begin
+  //write cod here... exercício 10
+ // if (not ClientDataSet.FieldByName ('Codigo').IsNull) and
+   //  (not ClientDataSet.FieldByName ('Descricao').IsNull) and
+   //  (not ClientDataSet.FieldByName ('Unidade').IsNull) and
+   //  (not ClientDataSet.FieldByName ('Forncedor').IsNull) and
+   //  (not ClientDataSet.FieldByName ('Data').IsNull) and
+   //  (not ClientDataSet.FieldByName ('Quantidade').IsNull) and
+   //  (not ClientDataSet.FieldByName ('Unitario').IsNull) and
+  //   (not ClientDataSet.FieldByName ('Total').IsNull) then
+  //begin
+    //ShowMessage('Preecha todos os campos');
+  //end;
+end;
+
+procedure TForm1.ClientDataSetCalcFields(DataSet: TDataSet);
+begin
+  if (not ClientDataSet.FieldByName ('Quantidade').IsNull) and
+     (not ClientDataSet.FieldByName ('Unitario').IsNull) then
+  begin
+    ClientDataSet.FieldByName('Total').Value :=
+    ClientDataSet.FieldByName('Quantidade').Value * ClientDataSet.FieldByName
+    ('Unitario').Value;
+  end;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+const
+cDataFile = 'SingleTier.xml';
+begin
+  ClientDataSet.FileName := ExtractFilePath(Application.ExeName) + cDataFile;
+  if FileExists(ClientDataSet.FileName) then
+     ClientDataSet.Open
+  else
+     ClientDataSet.CreateDataSet;
+end;
+
+end.
