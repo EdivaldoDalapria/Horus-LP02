@@ -62,17 +62,17 @@ Coordinates=550,10,49,58
 Coordinates=600,298,49,58
 
 []
-Coordinates=456,386,62,36
+Coordinates=342,87,91,36
 
 [dbedtEstoqueQtd]
-Coordinates=242,366,54,36
+Coordinates=242,366,114,36
 Visible=True
 
 [dbedtEstoqueVlr]
-Coordinates=569,366,54,36
+Coordinates=569,366,110,36
 
 [ClientDataSet]
-Coordinates=10,10,72,278
+Coordinates=10,10,94,278
 
 [ClientDataSetDescricao]
 Coordinates=609,276,92,36
@@ -108,32 +108,39 @@ Coordinates=92,10,101,124
 Coordinates=203,10,101,124
 
 [edtValor]
-Coordinates=128,366,40,58
+Coordinates=128,366,63,58
 
 [btnExecutar]
-Coordinates=432,10,49,58
+Coordinates=432,10,83,58
 
 [dbedtCodigo]
-Coordinates=10,434,54,36
+Coordinates=10,434,87,36
+Visible=True
 
 [dbedtDescricao]
-Coordinates=178,366,54,36
+Coordinates=178,366,104,36
 
 [dbedtUnidade]
-Coordinates=74,434,54,36
+Coordinates=74,434,94,36
 
 [dbedtData]
-Coordinates=441,366,54,36
+Coordinates=441,366,74,36
 
 [dbedtFornecedor]
-Coordinates=505,366,54,36
+Coordinates=505,366,112,36
 
 [dbedtQuantidade]
-Coordinates=306,366,54,36
+Coordinates=306,366,113,36
 
 [dbedtUnitario]
-Coordinates=138,434,54,36
+Coordinates=138,434,91,36
 
 [dbedtTotal]
-Coordinates=370,366,61,36
+Coordinates=370,366,75,36
+
+[lbl15]
+Coordinates=240,153,49,58
+
+[ClientDataSetData]
+Coordinates=212,230,121,36
 

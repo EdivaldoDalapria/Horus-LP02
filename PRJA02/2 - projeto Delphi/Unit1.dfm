@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 514
-  ClientWidth = 784
+  ClientHeight = 512
+  ClientWidth = 782
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,16 +11,18 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  WindowState = wsMaximized
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object pnl1: TPanel
     Left = 0
     Top = 0
-    Width = 784
+    Width = 782
     Height = 33
     Align = alTop
     TabOrder = 0
+    ExplicitWidth = 784
     object tdb1: TDBNavigator
       Left = 344
       Top = 0
@@ -258,8 +260,8 @@ object Form1: TForm1
     end
   end
   object tdb2: TDBGrid
-    Left = 0
-    Top = 263
+    Left = -2
+    Top = 272
     Width = 784
     Height = 178
     DataSource = DataSource
@@ -269,6 +271,52 @@ object Form1: TForm1
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'Codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Descricao'
+        Width = 234
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Unidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Fornecedor'
+        Width = 133
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Data'
+        Width = 65
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Quantidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Unitario'
+        Width = 62
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Total'
+        Width = 78
+        Visible = True
+      end>
   end
   object grp1: TGroupBox
     Left = 0

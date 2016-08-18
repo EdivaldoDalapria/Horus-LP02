@@ -81,27 +81,33 @@ end;
 
 procedure TForm1.cbbAcaoChange(Sender: TObject);
 begin
+    // desabilita o campo edtValor
     if (cbbAcao.ItemIndex = 0) or (cbbAcao.ItemIndex = 3) or (cbbAcao.ItemIndex = 6)  then
     begin
-      //(cbbAcao.OnChange := edtValor = False);
+      edtValor.Enabled := False;
+    end;
+    // habilita o campo edtValor
+    if (cbbAcao.ItemIndex = 1) or (cbbAcao.ItemIndex = 2) or (cbbAcao.ItemIndex = 4) or (cbbAcao.ItemIndex = 5)then
+    begin
+      edtValor.Enabled := True;
     end;
 
 end;
 
 procedure TForm1.ClientDataSetBeforePost(DataSet: TDataSet);
-begin
- //write the cod here... exercício 10
- // if (not ClientDataSet.FieldByName ('Codigo').IsNull) and
-   //  (not ClientDataSet.FieldByName ('Descricao').IsNull) and
-   //  (not ClientDataSet.FieldByName ('Unidade').IsNull) and
-   //  (not ClientDataSet.FieldByName ('Forncedor').IsNull) and
-   //  (not ClientDataSet.FieldByName ('Data').IsNull) and
-   //  (not ClientDataSet.FieldByName ('Quantidade').IsNull) and
-   //  (not ClientDataSet.FieldByName ('Unitario').IsNull) and
-  //   (not ClientDataSet.FieldByName ('Total').IsNull) then
-  //begin
-    //ShowMessage('Preecha todos os campos');
-  //end;
+begin  //write the cod here... exercício 10
+
+ //if (not ClientDataSet.FieldByName ('Codigo').IsNull) then
+ //begin
+    //ShowMessage('Preecha o campo');
+ //end;
+   //  (not ClientDataSet.FieldByName ('Descricao').IsNull) then
+   //  (not ClientDataSet.FieldByName ('Unidade').IsNull) then
+   //  (not ClientDataSet.FieldByName ('Forncedor').IsNull) then
+   //  (not ClientDataSet.FieldByName ('Data').IsNull) then
+   //  (not ClientDataSet.FieldByName ('Quantidade').IsNull) then
+   //  (not ClientDataSet.FieldByName ('Unitario').IsNull) then
+   //  (not ClientDataSet.FieldByName ('Total').IsNull) then
 end;
 
 procedure TForm1.ClientDataSetCalcFields(DataSet: TDataSet);
@@ -119,6 +125,7 @@ procedure TForm1.FormCreate(Sender: TObject);
 const
 cDataFile = 'SingleTier.xml';
 begin
+  // verifica se existe o arquivo 'SingleTier.xml'. Se exixte abre se não cria o arquivo
   ClientDataSet.FileName := ExtractFilePath(Application.ExeName) + cDataFile;
   if FileExists(ClientDataSet.FileName) then
      ClientDataSet.Open
