@@ -1,0 +1,17 @@
+program FIREDAC_CADASTRO_VEICULAR;
+
+uses
+  Vcl.Forms,
+  Unit1 in 'Unit1.pas' {Form1},
+  DATA_MODULE_FIREDAC_CADASTRO_VEICULAR in 'DATA_MODULE_FIREDAC_CADASTRO_VEICULAR.pas' {DataModule2: TDataModule},
+  Frm.Proprietarios in 'Frm.Proprietarios.pas' {FrmProprietarios};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TDataModule2, DataModule2);
+  Application.Run;
+end.

@@ -1,0 +1,19 @@
+object DataModule2: TDataModule2
+  OldCreateOrder = False
+  Height = 451
+  Width = 625
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=D:\HORUS - Sistemas de Informa'#231#227'o\4'#176' Semestre\Linguagem' +
+        ' de Programa'#231#227'o II\PROJETOS\9 - Aula\1 - Projeto Firebird\FIREDA' +
+        'C_CADASTRO_VEICULAR.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 408
+    Top = 104
+  end
+end

@@ -1,0 +1,56 @@
+object DM: TDM
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 451
+  Width = 625
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=D:\HORUS - Sistemas de Informa'#231#227'o\4'#176' Semestre\Linguagem' +
+        ' de Programa'#231#227'o II\PROJETOS\9 - Aula\1 - Projeto Firebird\FIREDA' +
+        'C_CADASTRO_VEICULAR.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 464
+    Top = 56
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 488
+    Top = 160
+  end
+  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    Left = 504
+    Top = 280
+  end
+  object QryProprietario: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT PROPRIETARIO.PRP_CODIGO,'
+      'PROPRIETARIO.PRP_NOME,'
+      'PROPRIETARIO.PRP_ENDERECO'
+      'FROM PROPRIETARIO')
+    Left = 296
+    Top = 48
+    object QryProprietarioPRP_CODIGO: TIntegerField
+      FieldName = 'PRP_CODIGO'
+      Origin = 'PRP_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryProprietarioPRP_NOME: TStringField
+      FieldName = 'PRP_NOME'
+      Origin = 'PRP_NOME'
+      Required = True
+      Size = 60
+    end
+    object QryProprietarioPRP_ENDERECO: TStringField
+      FieldName = 'PRP_ENDERECO'
+      Origin = 'PRP_ENDERECO'
+      Size = 100
+    end
+  end
+end

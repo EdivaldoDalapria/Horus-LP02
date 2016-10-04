@@ -1,0 +1,50 @@
+unit Frm.VeiculoMultas.pas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Grids,
+  Vcl.DBGrids, Data.DB;
+
+type
+  TFrmVeiculoMultas = class(TForm)
+    DBNavigator1: TDBNavigator;
+    DataSource1: TDataSource;
+    DataSource2: TDataSource;
+    DataSource3: TDataSource;
+    DBGrid1: TDBGrid;
+    DBGrid2: TDBGrid;
+    DBNavigator2: TDBNavigator;
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmVeiculoMultas: TFrmVeiculoMultas;
+
+implementation
+
+{$R *.dfm}
+
+uses DATA_MODULE_FIREDAC_CADASTRO_VEICULAR;
+
+
+procedure TFrmVeiculoMultas.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+   DM.QryVeiculo.Close;
+   DM.QryMultas.Close;
+end;
+
+procedure TFrmVeiculoMultas.FormCreate(Sender: TObject);
+begin
+   DM.QryVeiculo.Open;
+   DM.QryMultas.Open;
+end;
+
+end.
