@@ -1,0 +1,28 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 481
+  Width = 582
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=D:\HORUS - Sistemas de Informa'#231#227'o\4'#176' Semestre\Linguagem' +
+        ' de Programa'#231#227'o II\PROJETOS\10 - Aula\1 - Projeto Firebird\FUTEB' +
+        'OL.FDB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 72
+    Top = 40
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 72
+    Top = 144
+  end
+  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    Left = 72
+    Top = 256
+  end
+end

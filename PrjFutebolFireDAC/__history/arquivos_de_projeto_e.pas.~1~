@@ -1,0 +1,24 @@
+unit arquivos_de_projeto_e;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TPrjFutebol = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  PrjFutebol: TPrjFutebol;
+
+implementation
+
+{$R *.dfm}
+
+end.

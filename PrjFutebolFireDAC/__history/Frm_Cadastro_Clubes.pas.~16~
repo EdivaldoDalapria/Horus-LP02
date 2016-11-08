@@ -1,0 +1,81 @@
+unit Frm_Cadastro_Clubes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ExtCtrls, Vcl.DBCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask;
+
+type
+  TCadastro_Clubes_Jogadores = class(TForm)
+    DBGrid_Clube: TDBGrid;
+    DBNavigator_Clube: TDBNavigator;
+    DsCadastroClubes: TDataSource;
+    DbedtClubeCodigo: TDBEdit;
+    Label1: TLabel;
+    DbedtClubeNome: TDBEdit;
+    DbedtEstado: TDBEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    DBNavigator_Jogador: TDBNavigator;
+    DBGrid_Jogador: TDBGrid;
+    DsDsCadastroJogadores: TDataSource;
+    Label4: TLabel;
+    DBEdit1: TDBEdit;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    DbedtNumeroJogador: TDBEdit;
+    DbedtJogadorNome: TDBEdit;
+    DbedtPosicao: TDBEdit;
+    DbedtIdade: TDBEdit;
+    DbedtLado: TDBEdit;
+    DbedtTitular: TDBEdit;
+    DbedtCaracteristica: TDBEdit;
+    Label13: TLabel;
+    DTDBlcbPais: TDBLookupComboBox;
+    Label15: TLabel;
+    Label14: TLabel;
+    EdtClube: TDBEdit;
+    DDTDBlcbTatica: TDBLookupComboBox;
+    DDTDBlcbTecnico: TDBLookupComboBox;
+    DDTDBlcbPais: TDBLookupComboBox;
+    Label16: TLabel;
+    Label17: TLabel;
+    Label18: TLabel;
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Cadastro_Clubes_Jogadores: TCadastro_Clubes_Jogadores;
+
+implementation
+
+{$R *.dfm}
+
+uses Data_Module_Querys;
+
+procedure TCadastro_Clubes_Jogadores.FormCreate(Sender: TObject);
+begin
+   DataModuleQuerys.QryPaises.Open;
+   DataModuleQuerys.QryPaises.Open;
+end;
+
+procedure TCadastro_Clubes_Jogadores.FormDestroy(Sender: TObject);
+begin
+   DataModuleQuerys.QryPaises.Close;
+   DataModuleQuerys.QryPaises.Close;
+end;
+
+end.

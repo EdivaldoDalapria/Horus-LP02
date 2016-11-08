@@ -1,0 +1,114 @@
+object DmConsulta: TDmConsulta
+  OldCreateOrder = False
+  Height = 428
+  Width = 579
+  object QryCltaJogador: TFDQuery
+    Connection = DataModuleConexao.FDConnection1
+    SQL.Strings = (
+      'SELECT jogador.jog_numero,'
+      '       jogador.pai_codigo,'
+      '       pais.pai_nome,'
+      '       jogador.clb_codigo,'
+      '       clube.clb_nome,'
+      '       jogador.jog_nome,'
+      '       jogador.jog_posicao,'
+      '       jogador.jog_idade,'
+      '       jogador.jog_lado,'
+      '       jogador.jog_titular,'
+      '       jogador.jog_caracteristica'
+      'FROM jogador'
+      'INNER JOIN pais ON (jogador.pai_codigo = pais.pai_codigo)'
+      'INNER JOIN clube ON (jogador.clb_codigo = clube.clb_codigo)')
+    Left = 48
+    Top = 40
+    object QryCltaJogadorJOG_NUMERO: TIntegerField
+      FieldName = 'JOG_NUMERO'
+      Origin = 'JOG_NUMERO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryCltaJogadorPAI_CODIGO: TIntegerField
+      FieldName = 'PAI_CODIGO'
+      Origin = 'PAI_CODIGO'
+      Required = True
+    end
+    object QryCltaJogadorPAI_NOME: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'PAI_NOME'
+      Origin = 'PAI_NOME'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 60
+    end
+    object QryCltaJogadorCLB_CODIGO: TIntegerField
+      FieldName = 'CLB_CODIGO'
+      Origin = 'CLB_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryCltaJogadorCLB_NOME: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'CLB_NOME'
+      Origin = 'CLB_NOME'
+      ProviderFlags = []
+      ReadOnly = True
+      Size = 60
+    end
+    object QryCltaJogadorJOG_NOME: TStringField
+      FieldName = 'JOG_NOME'
+      Origin = 'JOG_NOME'
+      Required = True
+      Size = 60
+    end
+    object QryCltaJogadorJOG_POSICAO: TStringField
+      FieldName = 'JOG_POSICAO'
+      Origin = 'JOG_POSICAO'
+      Required = True
+      Size = 30
+    end
+    object QryCltaJogadorJOG_IDADE: TIntegerField
+      FieldName = 'JOG_IDADE'
+      Origin = 'JOG_IDADE'
+      Required = True
+    end
+    object QryCltaJogadorJOG_LADO: TStringField
+      FieldName = 'JOG_LADO'
+      Origin = 'JOG_LADO'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+    object QryCltaJogadorJOG_TITULAR: TStringField
+      FieldName = 'JOG_TITULAR'
+      Origin = 'JOG_TITULAR'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+    object QryCltaJogadorJOG_CARACTERISTICA: TStringField
+      FieldName = 'JOG_CARACTERISTICA'
+      Origin = 'JOG_CARACTERISTICA'
+      Size = 100
+    end
+  end
+  object QryCltaTecnico: TFDQuery
+    Connection = DataModuleConexao.FDConnection1
+    Left = 144
+    Top = 40
+  end
+  object QryCltaClube: TFDQuery
+    Connection = DataModuleConexao.FDConnection1
+    Left = 240
+    Top = 40
+  end
+  object QryCltaTatica: TFDQuery
+    Connection = DataModuleConexao.FDConnection1
+    Left = 344
+    Top = 40
+  end
+  object QryCltaPais: TFDQuery
+    Connection = DataModuleConexao.FDConnection1
+    Left = 456
+    Top = 40
+  end
+end

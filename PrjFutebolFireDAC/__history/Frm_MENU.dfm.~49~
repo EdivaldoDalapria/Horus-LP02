@@ -1,0 +1,79 @@
+object FrmMENU: TFrmMENU
+  Left = 49
+  Top = 0
+  Caption = 'Futebol'
+  ClientHeight = 310
+  ClientWidth = 570
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MainMenu1: TMainMenu
+    Left = 16
+    Top = 8
+    object CadastrodePases1: TMenuItem
+      Caption = 'CADASTROS'
+      object Cadastro_de_Paises: TMenuItem
+        Caption = 'Cadastro de Pa'#237'ses'
+        OnClick = Cadastro_de_PaisesClick
+      end
+      object Cadastro_de_Taticas: TMenuItem
+        Caption = 'Cadastro de T'#225'ticas'
+        OnClick = Cadastro_de_TaticasClick
+      end
+      object Cadastro_de_Tecnicos: TMenuItem
+        Caption = 'Cadastro de T'#233'cnicos'
+        OnClick = Cadastro_de_TecnicosClick
+      end
+      object Cadastro_de_Clubes: TMenuItem
+        Caption = 'Cadastro de Clubes e Jogadores'
+        OnClick = Cadastro_de_ClubesClick
+      end
+    end
+    object CONSULTAS2: TMenuItem
+      Caption = 'CONSULTAS'
+      object Jogadores1: TMenuItem
+        Caption = 'Jogadores'
+        OnClick = Jogadores1Click
+      end
+      object Tecnicos1: TMenuItem
+        Caption = 'T'#233'cnicos'
+        OnClick = Tecnicos1Click
+      end
+      object Clubes1: TMenuItem
+        Caption = 'Clubes'
+        OnClick = Clubes1Click
+      end
+      object Taticas1: TMenuItem
+        Caption = 'T'#225'ticas'
+        OnClick = Taticas1Click
+      end
+      object Paises1: TMenuItem
+        Caption = 'Pa'#237'ses'
+        OnClick = Paises1Click
+      end
+      object SQL1: TMenuItem
+        Caption = 'SQL'
+        OnClick = SQL1Click
+      end
+    end
+    object BancodeDados1: TMenuItem
+      Caption = 'BANCO DE DADOS'
+      object Backup1: TMenuItem
+        Caption = 'Backup'
+        OnClick = Backup1Click
+      end
+      object Restore1: TMenuItem
+        Caption = 'Restore'
+        OnClick = Restore1Click
+      end
+    end
+  end
+end

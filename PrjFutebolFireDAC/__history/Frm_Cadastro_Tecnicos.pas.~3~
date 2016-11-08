@@ -1,0 +1,34 @@
+unit Frm_Cadastro_Tecnicos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.Grids, Vcl.DBGrids, Data.DB, Vcl.ExtCtrls;
+
+type
+  TCadastro_Tecnicos = class(TForm)
+    DBNavigator1: TDBNavigator;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    DbedtCodigo: TDBEdit;
+    Label1: TLabel;
+    DbedtNome: TDBEdit;
+    Label2: TLabel;
+    TDBlcbPais: TDBLookupComboBox;
+    Label3: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Cadastro_Tecnicos: TCadastro_Tecnicos;
+
+implementation
+
+{$R *.dfm}
+
+end.

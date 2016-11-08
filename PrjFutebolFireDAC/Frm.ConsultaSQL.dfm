@@ -1,0 +1,72 @@
+object FrmConsultaSQL: TFrmConsultaSQL
+  Left = 0
+  Top = 0
+  Align = alClient
+  Caption = 'Consulta SQL'
+  ClientHeight = 534
+  ClientWidth = 780
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  WindowState = wsMaximized
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 232
+    Width = 761
+    Height = 74
+    TabOrder = 0
+    object Cancelar_Consulta_SQL: TSpeedButton
+      Left = 48
+      Top = 16
+      Width = 177
+      Height = 33
+      Caption = 'Cancelar Consulta SQL'
+      OnClick = Cancelar_Consulta_SQLClick
+    end
+    object Executar_Consulta_SQL: TSpeedButton
+      Left = 480
+      Top = 16
+      Width = 177
+      Height = 34
+      Caption = 'Executar Consulta SQL'
+      OnClick = Executar_Consulta_SQLClick
+    end
+  end
+  object MmoSQL: TMemo
+    Left = 0
+    Top = 0
+    Width = 761
+    Height = 234
+    TabOrder = 1
+  end
+  object DBGridSQL: TDBGrid
+    Left = 0
+    Top = 307
+    Width = 761
+    Height = 214
+    DataSource = DsConsultaSQL
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object DsConsultaSQL: TDataSource
+    DataSet = QryConsultaSQL
+    Left = 504
+    Top = 56
+  end
+  object QryConsultaSQL: TFDQuery
+    Connection = DataModuleConexao.FDConnection1
+    Left = 400
+    Top = 56
+  end
+end

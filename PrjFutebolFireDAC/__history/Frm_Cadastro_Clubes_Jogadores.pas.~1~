@@ -1,0 +1,39 @@
+unit Frm_Cadastro_Clubes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ExtCtrls, Vcl.DBCtrls,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask;
+
+type
+  TCadastro_Clubes_Jogadores = class(TForm)
+    DBGrid_Clube: TDBGrid;
+    DBNavigator_Clube: TDBNavigator;
+    DsCadastroClubes: TDataSource;
+    DbedtCodigo: TDBEdit;
+    Label1: TLabel;
+    DbedtNome: TDBEdit;
+    DbedtEstado: TDBEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    DBNavigator_Jogador: TDBNavigator;
+    DBGrid_Jogador: TDBGrid;
+    DsDsCadastroJogadores: TDataSource;
+    Label4: TLabel;
+    DBEdit1: TDBEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Cadastro_Clubes_Jogadores: TCadastro_Clubes_Jogadores;
+
+implementation
+
+{$R *.dfm}
+
+end.

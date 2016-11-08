@@ -1,0 +1,32 @@
+program PrjFutebolFireDAC;
+
+uses
+  Vcl.Forms,
+  Frm_MENU in 'Frm_MENU.pas' {FrmMENU},
+  Data_Module_Conexao in 'Data_Module_Conexao.pas' {DataModuleConexao: TDataModule},
+  Frm_Cadastro_Paises in 'Frm_Cadastro_Paises.pas' {Cadastro_Paises},
+  Frm_Cadastro_Taticas in 'Frm_Cadastro_Taticas.pas' {Cadastro_Taticas},
+  Frm_Cadastro_Tecnicos in 'Frm_Cadastro_Tecnicos.pas' {Cadastro_Tecnicos},
+  Frm_Cadastro_Clubes in 'Frm_Cadastro_Clubes.pas' {Cadastro_Clubes_Jogadores},
+  Data_Module_Querys in 'Data_Module_Querys.pas' {DataModuleQuerys: TDataModule},
+  Frm.ConsultaSQL in 'Frm.ConsultaSQL.pas' {FrmConsultaSQL},
+  Dm.Consulta in 'Dm.Consulta.pas' {DmConsulta: TDataModule},
+  Frm.ConsultaJogador in 'Frm.ConsultaJogador.pas' {FrmConsultaJogador},
+  Frm.ConsultaTecnico in 'Frm.ConsultaTecnico.pas' {FrmConsultaTecnico},
+  Frm.ConsultaClube in 'Frm.ConsultaClube.pas' {FrmConsultaClube},
+  Frm.ConsultaTatica in 'Frm.ConsultaTatica.pas' {FrmConsultaTatica};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TDataModuleConexao, DataModuleConexao);
+  Application.CreateForm(TDataModuleQuerys, DataModuleQuerys);
+  Application.CreateForm(TFrmMENU, FrmMENU);
+  Application.CreateForm(TDmConsulta, DmConsulta);
+  Application.CreateForm(TFrmConsultaTecnico, FrmConsultaTecnico);
+  Application.CreateForm(TFrmConsultaClube, FrmConsultaClube);
+  Application.CreateForm(TFrmConsultaTatica, FrmConsultaTatica);
+  Application.Run;
+end.

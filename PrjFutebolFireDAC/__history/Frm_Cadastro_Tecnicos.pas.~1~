@@ -1,0 +1,24 @@
+unit Frm_Cadastro_Tecnicos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+
+type
+  TCadastro_Tecnicos = class(TForm)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Cadastro_Tecnicos: TCadastro_Tecnicos;
+
+implementation
+
+{$R *.dfm}
+
+end.

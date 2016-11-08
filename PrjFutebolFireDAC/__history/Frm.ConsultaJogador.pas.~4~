@@ -1,0 +1,35 @@
+unit Frm.ConsultaJogador;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TFrmConsultaJogador = class(TForm)
+    GroupBox1: TGroupBox;
+    CmbCampos: TComboBox;
+    Label1: TLabel;
+    RgTipo: TRadioGroup;
+    EdtValor: TEdit;
+    BtnConsulta: TButton;
+    DBGrid1: TDBGrid;
+    DataSource1: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmConsultaJogador: TFrmConsultaJogador;
+
+implementation
+
+{$R *.dfm}
+
+uses Dm.Consulta;
+
+end.

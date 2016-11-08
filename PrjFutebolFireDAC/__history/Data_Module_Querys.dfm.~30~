@@ -1,0 +1,251 @@
+object DataModuleQuerys: TDataModuleQuerys
+  OldCreateOrder = False
+  Height = 326
+  Width = 710
+  object QryPaises: TFDQuery
+    AfterInsert = QryPaisesAfterInsert
+    Connection = DataModuleConexao.FDConnection1
+    SQL.Strings = (
+      'select PAI_CODIGO, PAI_NOME'
+      'from PAIS ')
+    Left = 64
+    Top = 40
+    object QryPaisesPAI_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'PAI_CODIGO'
+      Origin = 'PAI_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryPaisesPAI_NOME: TStringField
+      DisplayLabel = 'NOME'
+      FieldName = 'PAI_NOME'
+      Origin = 'PAI_NOME'
+      Required = True
+      Size = 60
+    end
+  end
+  object DsPaises: TDataSource
+    DataSet = QryPaises
+    Left = 64
+    Top = 128
+  end
+  object QryTaticas: TFDQuery
+    AfterInsert = QryTaticasAfterInsert
+    Connection = DataModuleConexao.FDConnection1
+    SQL.Strings = (
+      'select TAT_CODIGO, TAT_DESCRICAO, TAT_ESQUEMA'
+      'from TATICA  ')
+    Left = 168
+    Top = 40
+    object QryTaticasTAT_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'TAT_CODIGO'
+      Origin = 'TAT_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryTaticasTAT_DESCRICAO: TStringField
+      DisplayLabel = 'DESCRICAO'
+      FieldName = 'TAT_DESCRICAO'
+      Origin = 'TAT_DESCRICAO'
+      Required = True
+      Size = 60
+    end
+    object QryTaticasTAT_ESQUEMA: TStringField
+      DisplayLabel = 'ESQUEMA'
+      FieldName = 'TAT_ESQUEMA'
+      Origin = 'TAT_ESQUEMA'
+      Required = True
+      Size = 5
+    end
+  end
+  object QryTecnicos: TFDQuery
+    AfterInsert = QryTecnicosAfterInsert
+    Connection = DataModuleConexao.FDConnection1
+    SQL.Strings = (
+      'select TEC_CODIGO, PAI_CODIGO, TEC_NOME'
+      'from TECNICO  ')
+    Left = 272
+    Top = 40
+    object QryTecnicosTEC_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'TEC_CODIGO'
+      Origin = 'TEC_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryTecnicosPAI_CODIGO: TIntegerField
+      DisplayLabel = 'PA'#205'S'
+      FieldName = 'PAI_CODIGO'
+      Origin = 'PAI_CODIGO'
+      Required = True
+    end
+    object QryTecnicosTEC_NOME: TStringField
+      DisplayLabel = 'NOME'
+      FieldName = 'TEC_NOME'
+      Origin = 'TEC_NOME'
+      Required = True
+      Size = 60
+    end
+  end
+  object QryClubes: TFDQuery
+    Connection = DataModuleConexao.FDConnection1
+    UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
+    UpdateOptions.GeneratorName = 'SEQ_CLB_CODIGO'
+    UpdateOptions.AutoIncFields = 'CLB_CODIGO'
+    SQL.Strings = (
+      
+        'select CLB_CODIGO, TAT_CODIGO, TEC_CODIGO, PAI_CODIGO, CLB_NOME,' +
+        ' CLB_ESTADIO, CLB_DTFUNDACAO'
+      'from CLUBE ')
+    Left = 384
+    Top = 40
+    object QryClubesCLB_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'CLB_CODIGO'
+      Origin = 'CLB_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryClubesTAT_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'TAT_CODIGO'
+      Origin = 'TAT_CODIGO'
+      Required = True
+    end
+    object QryClubesTEC_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'TEC_CODIGO'
+      Origin = 'TEC_CODIGO'
+      Required = True
+    end
+    object QryClubesPAI_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'PAI_CODIGO'
+      Origin = 'PAI_CODIGO'
+      Required = True
+    end
+    object QryClubesCLB_NOME: TStringField
+      DisplayLabel = 'NOME'
+      FieldName = 'CLB_NOME'
+      Origin = 'CLB_NOME'
+      Required = True
+      Size = 60
+    end
+    object QryClubesCLB_ESTADIO: TStringField
+      DisplayLabel = 'ESTADIO'
+      FieldName = 'CLB_ESTADIO'
+      Origin = 'CLB_ESTADIO'
+      Size = 60
+    end
+    object QryClubesCLB_DTFUNDACAO: TDateField
+      DisplayLabel = 'DTFUNDACAO'
+      FieldName = 'CLB_DTFUNDACAO'
+      Origin = 'CLB_DTFUNDACAO'
+    end
+  end
+  object QryJogadores: TFDQuery
+    AfterInsert = QryJogadoresAfterInsert
+    MasterSource = DsClubes
+    MasterFields = 'CLB_CODIGO'
+    Connection = DataModuleConexao.FDConnection1
+    SQL.Strings = (
+      
+        'select CLB_CODIGO, JOG_NUMERO, PAI_CODIGO, JOG_NOME, JOG_POSICAO' +
+        ', JOG_IDADE, JOG_LADO, JOG_TITULAR, JOG_CARACTERISTICA'
+      'from JOGADOR  '
+      'WHERE JOGADOR.CLB_CODIGO = :CLB_CODIGO')
+    Left = 496
+    Top = 40
+    ParamData = <
+      item
+        Name = 'CLB_CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+    object QryJogadoresCLB_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'CLB_CODIGO'
+      Origin = 'CLB_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryJogadoresJOG_NUMERO: TIntegerField
+      DisplayLabel = 'NUMERO'
+      FieldName = 'JOG_NUMERO'
+      Origin = 'JOG_NUMERO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryJogadoresPAI_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'PAI_CODIGO'
+      Origin = 'PAI_CODIGO'
+      Required = True
+    end
+    object QryJogadoresJOG_NOME: TStringField
+      DisplayLabel = 'NOME'
+      FieldName = 'JOG_NOME'
+      Origin = 'JOG_NOME'
+      Required = True
+      Size = 60
+    end
+    object QryJogadoresJOG_POSICAO: TStringField
+      DisplayLabel = 'POSICAO'
+      FieldName = 'JOG_POSICAO'
+      Origin = 'JOG_POSICAO'
+      Required = True
+      Size = 30
+    end
+    object QryJogadoresJOG_IDADE: TIntegerField
+      DisplayLabel = 'IDADE'
+      FieldName = 'JOG_IDADE'
+      Origin = 'JOG_IDADE'
+      Required = True
+    end
+    object QryJogadoresJOG_LADO: TStringField
+      DisplayLabel = 'LADO'
+      FieldName = 'JOG_LADO'
+      Origin = 'JOG_LADO'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+    object QryJogadoresJOG_TITULAR: TStringField
+      DisplayLabel = 'TITULAR'
+      FieldName = 'JOG_TITULAR'
+      Origin = 'JOG_TITULAR'
+      Required = True
+      FixedChar = True
+      Size = 1
+    end
+    object QryJogadoresJOG_CARACTERISTICA: TStringField
+      DisplayLabel = 'CARACTERISTICA'
+      FieldName = 'JOG_CARACTERISTICA'
+      Origin = 'JOG_CARACTERISTICA'
+      Size = 100
+    end
+  end
+  object DsTaticas: TDataSource
+    DataSet = QryTaticas
+    Left = 168
+    Top = 128
+  end
+  object DsTecnicos: TDataSource
+    DataSet = QryTecnicos
+    Left = 272
+    Top = 128
+  end
+  object DsClubes: TDataSource
+    DataSet = QryClubes
+    Left = 384
+    Top = 128
+  end
+  object DsJogadores: TDataSource
+    DataSet = QryJogadores
+    Left = 496
+    Top = 128
+  end
+end

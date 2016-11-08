@@ -1,0 +1,487 @@
+object Cadastro_Clubes_Jogadores: TCadastro_Clubes_Jogadores
+  Left = 0
+  Top = 0
+  Align = alClient
+  Caption = 'Cadastro Clubes e Jogadores'
+  ClientHeight = 659
+  ClientWidth = 771
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 56
+    Width = 33
+    Height = 13
+    Caption = 'C'#243'digo'
+  end
+  object Label2: TLabel
+    Left = 136
+    Top = 56
+    Width = 27
+    Height = 13
+    Caption = 'Nome'
+  end
+  object Label3: TLabel
+    Left = 480
+    Top = 56
+    Width = 35
+    Height = 13
+    Caption = 'Estadio'
+  end
+  object Label4: TLabel
+    Left = 640
+    Top = 56
+    Width = 88
+    Height = 13
+    Caption = 'Data de Funda'#231#227'o'
+  end
+  object Label5: TLabel
+    Left = 342
+    Top = 448
+    Width = 27
+    Height = 13
+    Caption = 'Clube'
+  end
+  object Label6: TLabel
+    Left = 480
+    Top = 351
+    Width = 37
+    Height = 13
+    Caption = 'Numero'
+  end
+  object Label7: TLabel
+    Left = 8
+    Top = 351
+    Width = 27
+    Height = 13
+    Caption = 'Nome'
+  end
+  object Label8: TLabel
+    Left = 8
+    Top = 402
+    Width = 36
+    Height = 13
+    Caption = 'Posi'#231#227'o'
+  end
+  object Label9: TLabel
+    Left = 410
+    Top = 351
+    Width = 28
+    Height = 13
+    Caption = 'Idade'
+  end
+  object Label10: TLabel
+    Left = 607
+    Top = 351
+    Width = 23
+    Height = 13
+    Caption = 'Lado'
+  end
+  object Label11: TLabel
+    Left = 544
+    Top = 351
+    Width = 30
+    Height = 13
+    Caption = 'Titular'
+  end
+  object Label12: TLabel
+    Left = 160
+    Top = 402
+    Width = 66
+    Height = 13
+    Caption = 'Caracteristica'
+  end
+  object Label13: TLabel
+    Left = 8
+    Top = 448
+    Width = 19
+    Height = 13
+    Caption = 'Pa'#237's'
+  end
+  object Label15: TLabel
+    Left = 564
+    Top = 314
+    Width = 181
+    Height = 18
+    Caption = 'CADASTRO JOGADORES'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label14: TLabel
+    Left = 564
+    Top = 11
+    Width = 146
+    Height = 18
+    Caption = 'CADASTRO CLUBES'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label16: TLabel
+    Left = 8
+    Top = 106
+    Width = 29
+    Height = 13
+    Caption = 'T'#225'tica'
+  end
+  object Label17: TLabel
+    Left = 478
+    Top = 106
+    Width = 19
+    Height = 13
+    Caption = 'Pa'#237's'
+  end
+  object Label18: TLabel
+    Left = 224
+    Top = 106
+    Width = 36
+    Height = 13
+    Caption = 'T'#233'cnico'
+  end
+  object DBGrid_Clube: TDBGrid
+    Left = -3
+    Top = 162
+    Width = 748
+    Height = 122
+    DataSource = DsCadastroClubes
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'CLB_CODIGO'
+        Width = 59
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CLB_NOME'
+        Width = 195
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CLB_ESTADIO'
+        Width = 152
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CLB_DTFUNDACAO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TEC_CODIGO'
+        Width = 76
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TAT_CODIGO'
+        Width = 75
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PAI_CODIGO'
+        Width = 77
+        Visible = True
+      end>
+  end
+  object DBNavigator_Clube: TDBNavigator
+    Left = -2
+    Top = 0
+    Width = 560
+    Height = 42
+    DataSource = DsCadastroClubes
+    TabOrder = 1
+  end
+  object DbedtClubeCodigo: TDBEdit
+    Left = 8
+    Top = 75
+    Width = 105
+    Height = 21
+    DataField = 'CLB_CODIGO'
+    DataSource = DataModuleQuerys.DsClubes
+    TabOrder = 2
+  end
+  object DbedtClubeNome: TDBEdit
+    Left = 136
+    Top = 75
+    Width = 322
+    Height = 21
+    DataField = 'CLB_NOME'
+    DataSource = DataModuleQuerys.DsClubes
+    TabOrder = 3
+  end
+  object DbedtEstadio: TDBEdit
+    Left = 481
+    Top = 75
+    Width = 136
+    Height = 21
+    DataField = 'CLB_ESTADIO'
+    DataSource = DataModuleQuerys.DsClubes
+    TabOrder = 4
+  end
+  object DBNavigator_Jogador: TDBNavigator
+    Left = -2
+    Top = 304
+    Width = 560
+    Height = 41
+    DataSource = DsCadastroJogadores
+    TabOrder = 5
+  end
+  object DBGrid_Jogador: TDBGrid
+    Left = 0
+    Top = 502
+    Width = 745
+    Height = 147
+    DataSource = DsCadastroJogadores
+    TabOrder = 6
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'JOG_NOME'
+        Width = 173
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'JOG_IDADE'
+        Width = 39
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'JOG_NUMERO'
+        Width = 47
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'JOG_TITULAR'
+        Width = 47
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'JOG_LADO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'JOG_POSICAO'
+        Width = 57
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'JOG_CARACTERISTICA'
+        Width = 148
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'PAI_CODIGO'
+        Width = 75
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CLB_CODIGO'
+        Width = 88
+        Visible = True
+      end>
+  end
+  object DbedtDataFundacao: TDBEdit
+    Left = 640
+    Top = 75
+    Width = 105
+    Height = 21
+    DataField = 'CLB_DTFUNDACAO'
+    DataSource = DataModuleQuerys.DsClubes
+    TabOrder = 7
+  end
+  object DbedtNumeroJogador: TDBEdit
+    Left = 480
+    Top = 370
+    Width = 47
+    Height = 21
+    DataField = 'JOG_NUMERO'
+    DataSource = DataModuleQuerys.DsJogadores
+    TabOrder = 8
+  end
+  object DbedtJogadorNome: TDBEdit
+    Left = 8
+    Top = 370
+    Width = 385
+    Height = 21
+    DataField = 'JOG_NOME'
+    DataSource = DataModuleQuerys.DsJogadores
+    TabOrder = 9
+  end
+  object DbedtPosicao: TDBEdit
+    Left = 8
+    Top = 421
+    Width = 129
+    Height = 21
+    DataField = 'JOG_POSICAO'
+    DataSource = DataModuleQuerys.DsJogadores
+    TabOrder = 10
+  end
+  object DbedtIdade: TDBEdit
+    Left = 410
+    Top = 370
+    Width = 47
+    Height = 21
+    DataField = 'JOG_IDADE'
+    DataSource = DataModuleQuerys.DsJogadores
+    TabOrder = 11
+  end
+  object DbedtLado: TDBEdit
+    Left = 607
+    Top = 370
+    Width = 138
+    Height = 21
+    DataField = 'JOG_LADO'
+    DataSource = DataModuleQuerys.DsJogadores
+    TabOrder = 12
+  end
+  object DbedtTitular: TDBEdit
+    Left = 544
+    Top = 370
+    Width = 47
+    Height = 21
+    DataField = 'JOG_TITULAR'
+    DataSource = DataModuleQuerys.DsJogadores
+    TabOrder = 13
+  end
+  object DbedtCaracteristica: TDBEdit
+    Left = 160
+    Top = 421
+    Width = 585
+    Height = 21
+    DataField = 'JOG_CARACTERISTICA'
+    DataSource = DataModuleQuerys.DsJogadores
+    TabOrder = 14
+  end
+  object DDTDBlcbPaisJog: TDBLookupComboBox
+    Left = 8
+    Top = 467
+    Width = 312
+    Height = 21
+    DataField = 'PAI_CODIGO'
+    DataSource = DsCadastroJogadores
+    KeyField = 'PAI_CODIGO'
+    ListField = 'PAI_NOME'
+    ListSource = DsCadastroPaisesJog
+    TabOrder = 15
+  end
+  object DDTDBlcbTatica: TDBLookupComboBox
+    Left = 8
+    Top = 125
+    Width = 193
+    Height = 21
+    DataField = 'TAT_CODIGO'
+    DataSource = DsCadastroClubesJog
+    KeyField = 'TAT_CODIGO'
+    ListField = 'TAT_ESQUEMA'
+    ListSource = DsCadastroTaticasClb
+    TabOrder = 16
+  end
+  object DDTDBlcbTecnico: TDBLookupComboBox
+    Left = 224
+    Top = 125
+    Width = 234
+    Height = 21
+    DataField = 'TEC_CODIGO'
+    DataSource = DsCadastroClubesJog
+    KeyField = 'TEC_CODIGO'
+    ListField = 'TEC_NOME'
+    ListSource = DsCadastroTecnicosClb
+    TabOrder = 17
+  end
+  object DDTDBlcbPais: TDBLookupComboBox
+    Left = 481
+    Top = 125
+    Width = 265
+    Height = 21
+    DataField = 'PAI_CODIGO'
+    DataSource = DsCadastroClubes
+    KeyField = 'PAI_CODIGO'
+    ListField = 'PAI_NOME'
+    ListSource = DsCadastroPaisesClb
+    TabOrder = 18
+  end
+  object DDTDBlcbClubeJog: TDBLookupComboBox
+    Left = 342
+    Top = 467
+    Width = 403
+    Height = 21
+    KeyField = 'CLB_CODIGO'
+    ListField = 'CLB_NOME'
+    ListSource = DsCadastroClubesJog
+    TabOrder = 19
+  end
+  object DsCadastroClubes: TDataSource
+    DataSet = DataModuleQuerys.QryClubes
+    Left = 632
+    Top = 208
+  end
+  object DsCadastroJogadores: TDataSource
+    DataSet = DataModuleQuerys.QryJogadores
+    Left = 632
+    Top = 544
+  end
+  object DsCadastroTaticasClb: TDataSource
+    DataSet = DataModuleQuerys.QryTaticas
+    Left = 504
+    Top = 208
+  end
+  object DsCadastroTecnicosClb: TDataSource
+    DataSet = DataModuleQuerys.QryTecnicos
+    Left = 360
+    Top = 208
+  end
+  object DsCadastroPaisesClb: TDataSource
+    DataSet = DataModuleQuerys.QryPaises
+    Left = 224
+    Top = 208
+  end
+  object DsCadastroPaisesJog: TDataSource
+    DataSet = DataModuleQuerys.QryPaises
+    Left = 480
+    Top = 544
+  end
+  object DsCadastroClubesJog: TDataSource
+    DataSet = DataModuleQuerys.QryClubes
+    Left = 336
+    Top = 544
+  end
+end
