@@ -27,6 +27,21 @@ TTipoConsulta = (tpIniciando, tpContendo, tpIgual);
     QryCltaClube: TFDQuery;
     QryCltaTatica: TFDQuery;
     QryCltaPais: TFDQuery;
+    QryCltaTecnicoTEC_CODIGO: TIntegerField;
+    QryCltaTecnicoTEC_NOME: TStringField;
+    QryCltaTecnicoPAI_NOME: TStringField;
+    QryCltaClubeCLB_CODIGO: TIntegerField;
+    QryCltaClubeCLB_NOME: TStringField;
+    QryCltaClubeCLB_ESTADIO: TStringField;
+    QryCltaClubeCLB_DTFUNDACAO: TDateField;
+    QryCltaClubeTAT_ESQUEMA: TStringField;
+    QryCltaClubeTEC_NOME: TStringField;
+    QryCltaClubePAI_NOME: TStringField;
+    QryCltaTaticaTAT_CODIGO: TIntegerField;
+    QryCltaTaticaTAT_DESCRICAO: TStringField;
+    QryCltaTaticaTAT_ESQUEMA: TStringField;
+    QryCltaPaisPAI_CODIGO: TIntegerField;
+    QryCltaPaisPAI_NOME: TStringField;
   private
     { Private declarations }
   public
@@ -55,7 +70,34 @@ uses Data_Module_Conexao;
 procedure TDmConsulta.ConsultarClube(const pCampoNome: string;
   const pTipo: TTipoConsulta; const pValor: string);
 begin
-  // método Consultar Clube
+  QryCltaClube.Close;
+  QryCltaClube.SQL.Clear;
+  QryCltaClube.SQL.Add('SELECT clube.clb_condigo');
+  QryCltaClube.SQL.Add('       clube.clb_nome');
+  QryCltaClube.SQL.Add('       clube.clb_estadio');
+  QryCltaClube.SQL.Add('       clube.clb_dtfundacao');
+  QryCltaClube.SQL.Add('       tatica.tat_esquema');
+  QryCltaClube.SQL.Add('       tecnico.tec_nome');
+  QryCltaClube.SQL.Add('       pais.pai_nome');
+  QryCltaClube.SQL.Add('FROM clube');
+  QryCltaClube.SQL.Add('INNER JOIN tatica ON (clube.tat_codigo = tatica.tat_codigo)');
+  QryCltaClube.SQL.Add('INNER JOIN tecnico ON (clube.tec_codigo = tecnico.tec_codigo)');
+  QryCltaClube.SQL.Add('INNER JOIN pais ON (clube.pai_codigo = pais.pai_codigo)');
+  case Ptipo of
+     tpIniciando:
+     begin
+       QryCltaClube.SQL.Add('WHERE' + pCampoNome + ' LIKE ' + QuotedStr(pValor + '%'));
+     end;
+     tpContendo:
+     begin
+       QryCltaClube.SQL.Add('WHERE' + pCampoNome + ' LIKE ' + QuotedStr('%' + pValor + '%'));
+     end;
+     tpIgual:
+     begin
+       QryCltaClube.SQL.Add('WHERE' + pCampoNome + ' = ' + QuotedStr(pValor));
+     end;
+  end;
+  QryCltaClube.Open();
 end;
 
 procedure TDmConsulta.ConsultarJogador(const pCampoNome: string;
@@ -80,15 +122,15 @@ begin
   case Ptipo of
      tpIniciando:
      begin
-       QryCltaJogador.SQL.Add('EHERE ' + pCampoNome + ' LIKE ' + QuotedStr(pValor + '%'));
+       QryCltaJogador.SQL.Add('WHERE' + pCampoNome + ' LIKE ' + QuotedStr(pValor + '%'));
      end;
      tpContendo:
      begin
-       QryCltaJogador.SQL.Add('EHERE ' + pCampoNome + ' LIKE ' + QuotedStr('%' + pValor + '%'));
+       QryCltaJogador.SQL.Add('WHERE' + pCampoNome + ' LIKE ' + QuotedStr('%' + pValor + '%'));
      end;
      tpIgual:
      begin
-       QryCltaJogador.SQL.Add('EHERE ' + pCampoNome + ' = ' + QuotedStr(pValor));
+       QryCltaJogador.SQL.Add('WHERE' + pCampoNome + ' = ' + QuotedStr(pValor));
      end;
   end;
   QryCltaJogador.Open();
@@ -97,13 +139,52 @@ end;
 procedure TDmConsulta.ConsultarPais(const pCampoNome: string;
   const pTipo: TTipoConsulta; const pValor: string);
 begin
-  // método Consultar Pais
+  QryCltaPais.Close;
+  QryCltaPais.SQL.Clear;
+  QryCltaPais.SQL.Add('SELECT pais.pai_codigo');
+  QryCltaPais.SQL.Add('       pais.pai_nome');
+  QryCltaPais.SQL.Add('FROM pais');
+  case Ptipo of
+     tpIniciando:
+     begin
+       QryCltaPais.SQL.Add('WHERE' + pCampoNome + ' LIKE ' + QuotedStr(pValor + '%'));
+     end;
+     tpContendo:
+     begin
+       QryCltaPais.SQL.Add('WHERE' + pCampoNome + ' LIKE ' + QuotedStr('%' + pValor + '%'));
+     end;
+     tpIgual:
+     begin
+       QryCltaPais.SQL.Add('WHERE' + pCampoNome + ' = ' + QuotedStr(pValor));
+     end;
+  end;
+  QryCltaPais.Open();
 end;
 
 procedure TDmConsulta.ConsultarTatica(const pCampoNome: string;
   const pTipo: TTipoConsulta; const pValor: string);
 begin
-  // método Consultar Tatica
+  QryCltaTatica.Close;
+  QryCltaTatica.SQL.Clear;
+  QryCltaTatica.SQL.Add('SELECT tatica.tat_codigo');
+  QryCltaTatica.SQL.Add('       tatica.tat_descricao');
+  QryCltaTatica.SQL.Add('       tatica.tat_esquema');
+  QryCltaTatica.SQL.Add('FROM tatica');
+  case Ptipo of
+     tpIniciando:
+     begin
+       QryCltaTatica.SQL.Add('WHERE' + pCampoNome + ' LIKE ' + QuotedStr(pValor + '%'));
+     end;
+     tpContendo:
+     begin
+       QryCltaTatica.SQL.Add('WHERE' + pCampoNome + ' LIKE ' + QuotedStr('%' + pValor + '%'));
+     end;
+     tpIgual:
+     begin
+       QryCltaTatica.SQL.Add('WHERE' + pCampoNome + ' = ' + QuotedStr(pValor));
+     end;
+  end;
+  QryCltaTatica.Open();
 end;
 
 procedure TDmConsulta.ConsultarTecnico(const pCampoNome: string;
@@ -119,15 +200,15 @@ begin
   case Ptipo of
      tpIniciando:
      begin
-       QryCltaTecnico.SQL.Add('EHERE ' + pCampoNome + ' LIKE ' + QuotedStr(pValor + '%'));
+       QryCltaTecnico.SQL.Add('WHERE' + pCampoNome + ' LIKE ' + QuotedStr(pValor + '%'));
      end;
      tpContendo:
      begin
-       QryCltaTecnico.SQL.Add('EHERE ' + pCampoNome + ' LIKE ' + QuotedStr('%' + pValor + '%'));
+       QryCltaTecnico.SQL.Add('WHERE' + pCampoNome + ' LIKE ' + QuotedStr('%' + pValor + '%'));
      end;
      tpIgual:
      begin
-       QryCltaTecnico.SQL.Add('EHERE ' + pCampoNome + ' = ' + QuotedStr(pValor));
+       QryCltaTecnico.SQL.Add('WHERE' + pCampoNome + ' = ' + QuotedStr(pValor));
      end;
   end;
   QryCltaTecnico.Open();

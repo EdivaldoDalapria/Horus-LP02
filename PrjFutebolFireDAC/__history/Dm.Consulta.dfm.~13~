@@ -191,7 +191,7 @@ object DmConsulta: TDmConsulta
       #9'   tatica.tat_descricao,'
       '       tatica.tat_esquema'#9'   '
       'FROM tatica')
-    Left = 352
+    Left = 344
     Top = 40
     object QryCltaTaticaTAT_CODIGO: TIntegerField
       FieldName = 'TAT_CODIGO'

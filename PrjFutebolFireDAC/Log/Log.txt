@@ -406,3 +406,84 @@
 --- new start of FireDAC Trace ---
 36976101909 23:35:06.190     5492 -=#!!! FireDAC Tracer started !!!#=-
 36995266182 23:35:14.385     5492 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+3722674175 21:32:37.534     6732 -=#!!! FireDAC Tracer started !!!#=-
+3729515881 21:32:40.459     6732 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+4209130870 21:36:05.569     6540 -=#!!! FireDAC Tracer started !!!#=-
+4267109656 21:36:30.364     6540 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+4877486457 21:40:51.394     4812 -=#!!! FireDAC Tracer started !!!#=-
+5081153134 21:42:18.493     4812 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+8067588934 22:03:35.655     6428 -=#!!! FireDAC Tracer started !!!#=-
+8192723479 22:04:29.169     6428 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+8494238124 22:06:38.114     3368 -=#!!! FireDAC Tracer started !!!#=-
+
+--- new start of FireDAC Trace ---
+6960488599 20:56:18.660     6964 -=#!!! FireDAC Tracer started !!!#=-
+7107870345 20:57:21.677     6964 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+7666364323 21:01:20.467     5540 -=#!!! FireDAC Tracer started !!!#=-
+7690993527 21:01:30.999     5540 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+7748219846 21:01:55.473     2812 -=#!!! FireDAC Tracer started !!!#=-
+
+--- new start of FireDAC Trace ---
+7847745075 21:02:38.035     6012 -=#!!! FireDAC Tracer started !!!#=-
+7878888796 21:02:51.354     6012 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+7921617157 21:03:09.627     5140 -=#!!! FireDAC Tracer started !!!#=-
+7947068973 21:03:20.512     5140 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+7976488498 21:03:33.093     6164 -=#!!! FireDAC Tracer started !!!#=-
+7996061698 21:03:41.464     6164 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+8418853743 21:06:42.272     4820 -=#!!! FireDAC Tracer started !!!#=-
+8437253140 21:06:50.141     4820 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+8598990610 21:07:59.309     3788 -=#!!! FireDAC Tracer started !!!#=-
+8651798853 21:08:21.893     3788 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+8693879125 21:08:39.888     2312 -=#!!! FireDAC Tracer started !!!#=-
+8743161876 21:09:00.964     2312 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+8771551493 21:09:13.105     6876 -=#!!! FireDAC Tracer started !!!#=-
+8887671262 21:10:02.765     6876 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+8910903250 21:10:12.699     5096 -=#!!! FireDAC Tracer started !!!#=-
+8945456234 21:10:27.476     5096 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+9239993079 21:12:33.436     4864 -=#!!! FireDAC Tracer started !!!#=-
+9435010886 21:13:56.836     4864 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+9626639103 21:15:18.787     5568 -=#!!! FireDAC Tracer started !!!#=-
+9737627071 21:16:06.251     5568 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+9747381164 21:16:10.423     3460 -=#!!! FireDAC Tracer started !!!#=-
+
+--- new start of FireDAC Trace ---
+9898131610 21:17:14.892     3820 -=#!!! FireDAC Tracer started !!!#=-
+9952587801 21:17:38.181     3820 -=#!!! FireDAC Tracer stopped !!!#=-
+
+--- new start of FireDAC Trace ---
+10046570695 21:18:18.373     6232 -=#!!! FireDAC Tracer started !!!#=-
+10147792090 21:19:01.660     6232 -=#!!! FireDAC Tracer stopped !!!#=-

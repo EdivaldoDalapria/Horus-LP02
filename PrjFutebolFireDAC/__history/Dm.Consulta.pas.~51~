@@ -72,7 +72,7 @@ procedure TDmConsulta.ConsultarClube(const pCampoNome: string;
 begin
   QryCltaClube.Close;
   QryCltaClube.SQL.Clear;
-  QryCltaClube.SQL.Add('SELECT clube.clb_codigo,');
+  QryCltaClube.SQL.Add('SELECT clube.clb_condigo,');
   QryCltaClube.SQL.Add('       clube.clb_nome,');
   QryCltaClube.SQL.Add('       clube.clb_estadio,');
   QryCltaClube.SQL.Add('       clube.clb_dtfundacao,');
